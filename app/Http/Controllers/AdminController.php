@@ -34,6 +34,9 @@ class AdminController extends Controller
     public function dash(){
         return view("dashboard");
     }
+    public function dashk(){
+        return view("dashboardk");
+    }
     public function datapenjualan(){
         return view("datapenjualan");
     }

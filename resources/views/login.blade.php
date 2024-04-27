@@ -70,6 +70,8 @@
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
+          
+          
           <!-- Register -->
           <div class="card">
             <div class="card-body">
@@ -80,11 +82,17 @@
                   <span class="app-brand-text demo text-body fw-bolder">LOGIN</span>
                 </a>
               </div>
+              @if (session('pesan'))
+              <div class="alert alert-secondary" role="alert">
+                {{session('pesan')}}
+          </div>
+          @endif 
               <!-- /Logo -->
               <h4 class="mb-2">Welcome to ALFAMARET 👋</h4>
               <p class="mb-4">Please sign-in to your account</p>
 
               <form id="formAuthentication" class="mb-3" action="" method="POST">
+               
                 @csrf
                 <div class="mb-3">
                   <label for="Username" class="form-label">Username</label>

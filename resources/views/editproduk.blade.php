@@ -108,6 +108,7 @@
                       value="{{$editproduk->Harga}}"
                       {{-- placeholder="Enter Name" --}}
                     />
+                    
                   </div>
                   <div class="col mb-3">
                     <label for="Stok" class="form-label">Stok</label>

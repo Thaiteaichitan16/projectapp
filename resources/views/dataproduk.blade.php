@@ -88,7 +88,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="{{url('dashboard')}}" class="menu-link">
+              <a href="{{ url('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -108,7 +108,7 @@
                   </a>
                 </li> -->
                 <li class="menu-item active">
-                  <a href="{{url('produk')}}" class="menu-link">
+                  <a href="{{ url('produk') }}" class="menu-link">
                     <div data-i18n="Without navbar">Data Produk</div>
                   </a>
                 </li>
@@ -138,17 +138,17 @@
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
-                    <a href="{{url('pelanggan')}}" class="menu-link">
+                    <a href="{{ url('pelanggan') }}" class="menu-link">
                       <div data-i18n="Account">Data Pelanggan</div>
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="{{url('tambahpelanggan')}}" class="menu-link">
+                    <a href="{{ url('tambahpelanggan') }}" class="menu-link">
                       <div data-i18n="Notifications">Tambah Pelanggan</div>
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="{{url('admin')}}" class="menu-link">
+                    <a href="{{ url('admin') }}" class="menu-link">
                       <div data-i18n="Connections">Data Admin</div>
                     </a>
                   </li>
@@ -157,7 +157,7 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
             <!-- Cards -->
             <li class="menu-item">
-              <a href="{{url('penjualan')}}" class="menu-link">
+              <a href="{{ url('penjualan') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Penjualan</div>
               </a>
@@ -230,6 +230,11 @@
                                   class="form-control"
                                   {{-- placeholder="Enter Name" --}}
                                 />
+                              {{-- @error('Harga')
+                              <div class="form-text">
+                                {{$message}}
+                              </div>
+                              @enderror --}}
                               </div>
                               <div class="col mb-3">
                                 <label for="Stok" class="form-label">Stok</label>
@@ -240,7 +245,13 @@
                                   class="form-control"
                                   {{-- placeholder="Enter Name" --}}
                                 />
+                              {{-- @error('Stok')
+                                <div class="form-text">
+                                  {{$message}}
+                                </div>
+                              @enderror --}}
                               </div>
+                              
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
@@ -270,15 +281,15 @@
                     </thead>
                     <tbody class="table-border-bottom-0">
                       @foreach ($produks as $item)
-                      <tr>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$item->ProdukID}}</strong></td>
-                        <td>{{$item->NamaProduk}}</td>
+<tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->ProdukID }}</strong></td>
+                        <td>{{ $item->NamaProduk }}</td>
                         <td>
                           <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            {{$item->Harga}}
+                            {{ $item->Harga }}
                           </ul>
                         </td>
-                        <td><span class="badge bg-label-primary me-1">{{$item->Stok}}</span></td>
+                        <td><span class="badge bg-label-primary me-1">{{ $item->Stok }}</span></td>
                        
                         <td>
                           <div class="dropdown">
@@ -287,17 +298,17 @@
                             </button>
                             
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{url('pedit/'.$item->ProdukID)}}"
+                              <a class="dropdown-item" href="{{ url('pedit/' . $item->ProdukID) }}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
-                              <a class="dropdown-item" href="phapus/{{$item->ProdukID}}"
+                              <a class="dropdown-item" href="phapus/{{ $item->ProdukID }}"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
                           </div>
                         </td>
                       </tr>
-                      @endforeach
+                  @endforeach
                       
                     </tbody>
                   </table>
@@ -320,7 +331,7 @@
                 <div class="mb-2 mb-md-0">
                   ©
                   <script>
-                    document.write(new Date().getFullYear());
+                      document.write(new Date().getFullYear());
                   </script>
                   , made with ❤️ by
                   <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">Wildan Saputra</a>

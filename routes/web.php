@@ -14,6 +14,7 @@ Route::get('logout',[AdminController::class,'logouta']);
 
 //dashboard
 Route::get('dashboard',[AdminController::class,'dash'])->middleware(AdminMiddleware::class);
+Route::get('dashboardk',[AdminController::class,'dashk'])->middleware(AdminMiddleware::class);
 
 Route::get('penjualan',[AdminController::class,'datapenjualan'])->middleware(AdminMiddleware::class);
 //admin
